@@ -40,8 +40,9 @@ function postLivro(req, res) {
 
 function patchLivro(req, res) {
     try {
+        const id = req.params.id
+        
         if(id && Number(id)) {
-            const id = req.params.id
             const body = req.body
             modificaLivro(body, id)
             res.status(201)
